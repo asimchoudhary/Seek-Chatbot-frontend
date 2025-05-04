@@ -167,19 +167,10 @@ export default {
                 }
               }
 
-              try {
-                // Apply syntax highlighting
-                const highlighted = language
-                  ? hljs.highlight(code, { language }).value
-                  : hljs.highlightAuto(code).value;
-
-                return `<pre class="code-block"><code>${highlighted}</code></pre>`;
-              } catch (e) {
-                // Fallback if highlighting fails
-                return `<pre class="code-block"><code>${this.escapeHtml(
-                  code
-                )}</code></pre>`;
-              }
+              // Simply wrap code in pre and code tags with custom class
+              return `<pre class="custom-code-block"><code>${this.escapeHtml(
+                code
+              )}</code></pre>`;
             }
 
             // Regular text - escape HTML and convert newlines to <br>
@@ -829,6 +820,42 @@ export default {
   margin-top: 8px;
   bottom: auto;
   right: auto;
+}
+
+/* Custom code block styling */
+:deep(.custom-code-block) {
+  background-color: #1e1e1e !important;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  overflow-x: auto;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #d4d4d4 !important; /* Light grey text for visibility */
+  border-left: 4px solid #569cd6; /* Blue accent border */
+  max-width: 100%;
+}
+
+:deep(.custom-code-block code) {
+  color: #d4d4d4 !important;
+  white-space: pre;
+  display: block;
+}
+
+/* Additional rule to handle wrapped text better */
+:deep(.bot-message .custom-code-block) {
+  width: 100%;
+  margin-right: 10px; /* Give space for the timestamp */
+}
+
+/* Make message time clear when appearing with code blocks */
+.bot-message .message-time {
+  color: rgba(0, 0, 0, 0.7) !important;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 2px 5px;
+  border-radius: 10px;
 }
 
 /* Mobile responsiveness */
