@@ -718,10 +718,33 @@ export default {
   font-family: "Consolas", "Monaco", "Courier New", monospace;
   font-size: 14px;
   line-height: 1.5;
+  color: #abb2bf; /* Light text color for dark background */
 }
 
 :deep(code) {
   font-family: "Consolas", "Monaco", "Courier New", monospace;
+  color: #abb2bf; /* Ensure code text is light colored */
+}
+
+/* Add specific syntax highlighting colors */
+:deep(.hljs-keyword) {
+  color: #c678dd;
+}
+:deep(.hljs-string) {
+  color: #98c379;
+}
+:deep(.hljs-number) {
+  color: #d19a66;
+}
+:deep(.hljs-function) {
+  color: #61afef;
+}
+:deep(.hljs-comment) {
+  color: #5c6370;
+  font-style: italic;
+}
+:deep(.hljs-variable) {
+  color: #e06c75;
 }
 
 /* Make sure the message time doesn't overlap with code blocks */
