@@ -790,7 +790,7 @@ export default {
   color: #61afef !important;
 }
 :deep(.bot-message .hljs-comment) {
-  color: #5c6370 !important;
+  color: #faff60 !important;
   font-style: italic;
 }
 :deep(.bot-message .hljs-variable) {
@@ -818,7 +818,7 @@ export default {
   color: #e5c07b !important;
 }
 :deep(.bot-message .hljs-params) {
-  color: #abb2bf !important;
+  color: #13ffc0 !important;
 }
 
 /* Make sure the message time doesn't overlap with code blocks */
