@@ -757,6 +757,80 @@ export default {
   right: auto;
 }
 
+/* Enhance code block styling with higher specificity */
+:deep(.bot-message .code-block) {
+  background-color: #282c34 !important;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px 0;
+  overflow-x: auto;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #abb2bf !important; /* Force light text color */
+  display: block;
+}
+
+:deep(.bot-message code) {
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
+  color: #abb2bf !important; /* Force light text color */
+}
+
+/* Add specific syntax highlighting colors with !important */
+:deep(.bot-message .hljs-keyword) {
+  color: #c678dd !important;
+}
+:deep(.bot-message .hljs-string) {
+  color: #98c379 !important;
+}
+:deep(.bot-message .hljs-number) {
+  color: #d19a66 !important;
+}
+:deep(.bot-message .hljs-function) {
+  color: #61afef !important;
+}
+:deep(.bot-message .hljs-comment) {
+  color: #5c6370 !important;
+  font-style: italic;
+}
+:deep(.bot-message .hljs-variable) {
+  color: #e06c75 !important;
+}
+:deep(.bot-message .hljs-tag) {
+  color: #e06c75 !important;
+}
+:deep(.bot-message .hljs-name) {
+  color: #e06c75 !important;
+}
+:deep(.bot-message .hljs-attr) {
+  color: #d19a66 !important;
+}
+:deep(.bot-message .hljs-built_in) {
+  color: #56b6c2 !important;
+}
+:deep(.bot-message .hljs-title) {
+  color: #61afef !important;
+}
+:deep(.bot-message .hljs-literal) {
+  color: #56b6c2 !important;
+}
+:deep(.bot-message .hljs-type) {
+  color: #e5c07b !important;
+}
+:deep(.bot-message .hljs-params) {
+  color: #abb2bf !important;
+}
+
+/* Make sure the message time doesn't overlap with code blocks */
+.bot-message .message-time {
+  position: relative;
+  display: block;
+  text-align: right;
+  margin-top: 8px;
+  bottom: auto;
+  right: auto;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 480px) {
   .chatbot-container {
